@@ -18,7 +18,7 @@ class TrackerService {
   }
 
   async editTrack(name, payment) {
-    const updated = await dbContext.Goals.findOneAndUpdate({ _id: name.id, creatorId: name.creatorId }, name, payment)
+    const updated = await dbContext.Goals.findOneAndUpdate({ id: name.id, creatorId: name.creatorId }, name, payment)
     if (!updated) {
       throw new BadRequest('Invalid Id')
     }

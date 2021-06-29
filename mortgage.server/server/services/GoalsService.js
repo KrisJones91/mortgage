@@ -19,7 +19,7 @@ class GoalsService {
   }
 
   async editGoal(body, title) {
-    const updated = await dbContext.Goals.findOneAndUpdate({ _id: body.id, creatorId: body.creatorId }, body, title)
+    const updated = await dbContext.Goals.findOneAndUpdate({ id: body.id, creatorId: body.creatorId }, body, title)
     if (!updated) {
       throw new BadRequest('Invalid Id')
     }

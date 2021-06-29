@@ -23,12 +23,12 @@
     <div class="collapse navbar-collapse" id="navbarText">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
-          <router-link :to="{ name: 'Home' }" class="nav-link">
+          <router-link :to="{ name: 'Home' }" class="nav-link pl-2">
             Home
           </router-link>
         </li>
         <li class="nav-item">
-          <router-link :to="{ name: 'Goals' }" class="nav-link">
+          <router-link :to="{ name: 'Goals' }" class="nav-link pl-2">
             Goals
           </router-link>
         </li>
@@ -123,7 +123,8 @@ a:hover {
   color: purple;
 }
 .nav-item .nav-link.router-link-exact-active{
-  color: red;
+  color: rgb(255, 255, 255);
+  transform: scale(1.3)
 }
 .navbar{
   background-color: rgba(214, 95, 222, 0.341);
