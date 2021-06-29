@@ -1,0 +1,5 @@
+export const dev = window.location.origin.includes('localhost') ? 'http://localhost:3000' : ''
+export const baseURL = dev ? 'http://localhost:3000' : ''
+export const domain = 'dev-1s3xbyye.us.auth0.com'
+export const audience = 'https://mortgage/'
+export const clientId = 'rAwi2as6ZVsQ1HkkvOxBsGJ4vkt5h1rO'
