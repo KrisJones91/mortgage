@@ -3,7 +3,7 @@ import { Auth0Provider } from '@bcwdev/auth0provider'
 import { goalsService } from '../services/GoalsService'
 export class GoalsController extends BaseController {
   constructor() {
-    super('api/goals')
+    super('api/goals/')
     this.router
       .get('/', this.getGoals)
       .get('/:id', this.getOne)
@@ -15,6 +15,7 @@ export class GoalsController extends BaseController {
 
   async getGoals(req, res, next) {
     try {
+      req.userInfo._id = req.body.creatorId
       const data = await goalsService.getGoals()
       res.send(data)
     } catch (error) {
@@ -42,7 +43,6 @@ export class GoalsController extends BaseController {
   async editGoal(req, res, next) {
     try {
       req.body.creatorId = req.userInfo.id
-      req.body.id = req.params.id
       res.send(await goalsService.editGoal(req.body, req.title))
     } catch (error) {
       next(error)

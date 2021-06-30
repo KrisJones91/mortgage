@@ -4,7 +4,7 @@ import { api } from './AxiosService'
 
 class GoalsService {
   async getGoals() {
-    const res = await api.get('api/goals')
+    const res = await api.get('api/goals/')
     AppState.goals = res.data
   }
 
@@ -15,8 +15,9 @@ class GoalsService {
   }
 
   async createGoal(goal) {
-    const res = await api.post('api/goals', goal)
+    const res = await api.post('api/goals/', goal)
     AppState.goals.push(res.data)
+    return res.data
   }
 
   async editGoal(id, newTitle, newBody) {

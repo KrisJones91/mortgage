@@ -18,7 +18,7 @@
             >
             <textarea type="text"
                       class="form-control m-1 "
-                      id="description"
+                      id="body"
                       v-model="state.newGoal.body"
                       placeholder="Description..."
                       required
@@ -30,6 +30,9 @@
         </form>
       </div>
     </div>
+    <div class="row">
+      <GoalComponent v-for="goal in state.goals" :key="goal.id" :goal-prop="goal" />
+    </div>
   </div>
 </template>
 
@@ -39,6 +42,7 @@ import { AppState } from '../AppState'
 import { onMounted } from '@vue/runtime-core'
 import { logger } from '../utils/Logger'
 import { goalsService } from '../services/GoalsService'
+
 export default {
   name: 'GoalsPage',
   setup() {
@@ -60,6 +64,9 @@ export default {
       async createGoal() {
         try {
           await goalsService.createGoal(state.newGoal)
+          state.newGoal = {}
+          await goalsService.getGoals()
+          logger.log(state.newGoal)
         } catch (error) {
           logger.log(error)
         }

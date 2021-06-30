@@ -1,11 +1,12 @@
-const { Schema } = require('mongoose')
+import mongoose from 'mongoose'
+const Schema = mongoose.Schema
 
 const Goals = new Schema({
   title: { type: String, required: true },
   body: { type: String, required: true },
-  creatorId: { type: String, required: true }
+  creatorId: { type: String, ref: 'Account', required: true }
 },
-{ timestamps: true, toJSON: { virtual: true } }
+{ timestamps: true, _id: false, toJSON: { virtual: true } }
 )
 
 Goals.virtual('creator', {

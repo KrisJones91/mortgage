@@ -15,8 +15,7 @@ export default {
     const state = reactive({
       user: computed(() => AppState.user),
       account: computed(() => AppState.account),
-      goals: computed(() => AppState.goals),
-      newGoal: {}
+      goals: computed(() => AppState.goals)
     })
     onMounted(async() => {
       try {

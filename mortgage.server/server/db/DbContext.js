@@ -8,7 +8,7 @@ class DbContext {
   Values = mongoose.model('Value', ValueSchema);
   Account = mongoose.model('Account', AccountSchema);
 
-  Goals = mongoose.model('Goals', GoalsSchema);
+  Goals = mongoose.model('Goal', GoalsSchema);
   Tracker = mongoose.model('Tracker', TrackerSchema);
 }
 

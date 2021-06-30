@@ -7,7 +7,7 @@ class GoalsService {
   }
 
   async getOne(id) {
-    const Goal = await dbContext.Goals.findById(id).populate('creator', 'name _id')
+    const Goal = await dbContext.Goals.findById(id).populate('creator', 'name')
     if (!Goal) {
       throw new BadRequest('Sorry, no goal was found with that ID')
     }
@@ -19,7 +19,7 @@ class GoalsService {
   }
 
   async editGoal(body, title) {
-    const updated = await dbContext.Goals.findOneAndUpdate({ id: body.id, creatorId: body.creatorId }, body, title)
+    const updated = await dbContext.Goals.findOneAndUpdate({ _id: body.id, creatorId: body.creatorId }, body, title)
     if (!updated) {
       throw new BadRequest('Invalid Id')
     }
