@@ -10,7 +10,7 @@
       </div>
     </router-link>
     <button
-      class="navbar-toggler bg-dark"
+      class="navbar-toggler bg-box"
       type="button"
       data-toggle="collapse"
       data-target="#navbarText"
@@ -127,7 +127,7 @@ a:hover {
 .nav-item .nav-link.router-link-exact-active{
   color: rgb(255, 255, 255);
   transform: scale(1.11);
-  padding-left: 10%;
+  padding-left: 5%;
 }
 .navbar{
   background-color: rgba(214, 95, 222, 0.341);
@@ -137,10 +137,16 @@ a:hover {
   animation: pulse 5s infinite;
 }
   @keyframes pulse {
-    0% { color: white; }
-    /* 25% { color: rgb(146, 146, 146); } */
-    50% { color: rgb(76, 76, 76); }
-    /* 75% { color: rgb(134, 134, 134); } */
-    100% { color: #ffffff; }
+    0% { color: rgb(50, 50, 50); }
+    50% { color: rgb(186, 141, 255); }
+    100% { color: rgb(74, 74, 74); }
+
+  }
+  .bg-box{
+    background-image: linear-gradient(310deg, rgb(255, 255, 255), rgb(197, 197, 197));
+    box-shadow: 1px 3px 8px gray;
+  }
+  .bg-box:hover{
+    transform: scale(1.1);
   }
 </style>
