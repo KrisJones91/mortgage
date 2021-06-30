@@ -134,17 +134,18 @@ a:hover {
   color: black;
 }
 .far{
-  animation: pulse 5s infinite;
+  animation: pulse 6s infinite;
 }
   @keyframes pulse {
-    0% { color: rgb(50, 50, 50); }
-    50% { color: rgb(186, 141, 255); }
-    100% { color: rgb(74, 74, 74); }
-
+    0% { color: rgb(212, 183, 255); }
+    50% { color: rgb(142, 66, 255); }
+    100% { color: rgb(212, 183, 255); }
+    50% { color: rgb(142, 66, 255); }
   }
   .bg-box{
     background-image: linear-gradient(310deg, rgb(255, 255, 255), rgb(197, 197, 197));
     box-shadow: 1px 3px 8px gray;
+    transition: .5s;
   }
   .bg-box:hover{
     transform: scale(1.1);
