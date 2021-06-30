@@ -26,16 +26,7 @@ export default {
       }
     })
     return {
-      state,
-      async createGoal() {
-        try {
-          await goalsService.createGoal(state.newGoal)
-          state.newGoal = {}
-          await goalsService.getGoals()
-        } catch (error) {
-          logger.log(error)
-        }
-      }
+      state
     }
   }
 }

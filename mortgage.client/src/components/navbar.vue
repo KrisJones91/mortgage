@@ -130,7 +130,7 @@ a:hover {
   padding-left: 5%;
 }
 .navbar{
-  background-color: rgba(214, 95, 222, 0.341);
+  background-color: rgba(76, 76, 76, 0.341);
   color: black;
 }
 .far{
