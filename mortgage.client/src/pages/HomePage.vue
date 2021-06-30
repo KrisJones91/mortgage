@@ -8,6 +8,7 @@ import { computed, reactive, onMounted } from '@vue/runtime-core'
 import { AppState } from '../AppState'
 import { logger } from '../utils/Logger'
 import { goalsService } from '../services/GoalsService'
+import { accountService } from '../services/AccountService'
 export default {
   name: 'Home',
   setup() {

@@ -10,7 +10,7 @@
       </div>
     </router-link>
     <button
-      class="navbar-toggler"
+      class="navbar-toggler bg-dark"
       type="button"
       data-toggle="collapse"
       data-target="#navbarText"
@@ -18,17 +18,19 @@
       aria-expanded="false"
       aria-label="Toggle navigation"
     >
-      <span class="navbar-toggler-icon" />
+      <p class=" mb-0 pb-0">
+        <i class="sym far fa-caret-square-down fa-2x"></i>
+      </p>
     </button>
     <div class="collapse navbar-collapse" id="navbarText">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
-          <router-link :to="{ name: 'Home' }" class="nav-link pl-2">
+          <router-link :to="{ name: 'Home' }" class="nav-link">
             Home
           </router-link>
         </li>
         <li class="nav-item">
-          <router-link :to="{ name: 'Goals' }" class="nav-link pl-2">
+          <router-link :to="{ name: 'Goals' }" class="nav-link">
             Goals
           </router-link>
         </li>
@@ -124,11 +126,21 @@ a:hover {
 }
 .nav-item .nav-link.router-link-exact-active{
   color: rgb(255, 255, 255);
-  transform: scale(1.3)
+  transform: scale(1.11);
+  padding-left: 10%;
 }
 .navbar{
   background-color: rgba(214, 95, 222, 0.341);
   color: black;
 }
-
+.far{
+  animation: pulse 5s infinite;
+}
+  @keyframes pulse {
+    0% { color: white; }
+    /* 25% { color: rgb(146, 146, 146); } */
+    50% { color: rgb(76, 76, 76); }
+    /* 75% { color: rgb(134, 134, 134); } */
+    100% { color: #ffffff; }
+  }
 </style>
