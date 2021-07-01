@@ -6,7 +6,7 @@ const Goals = new Schema({
   body: { type: String, required: true },
   creatorId: { type: String, ref: 'Account', required: true }
 },
-{ timestamps: true, _id: false, toJSON: { virtual: true } }
+{ timestamps: true, toJSON: { virtual: true } }
 )
 
 Goals.virtual('creator', {

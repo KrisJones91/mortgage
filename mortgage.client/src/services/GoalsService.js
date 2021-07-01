@@ -4,20 +4,32 @@ import { api } from './AxiosService'
 
 class GoalsService {
   async getGoals() {
-    const res = await api.get('api/goals/')
-    AppState.goals = res.data
+    try {
+      const res = await api.get('api/goals')
+      AppState.goals = res.data
+    } catch (error) {
+      console.error(error)
+    }
   }
 
   async getOne(id) {
-    const res = await api.get('api/goals/' + id)
-    AppState.activeGoal = res.data
-    console.log(AppState.activeGoal)
+    try {
+      const res = await api.get('api/goals/' + id)
+      AppState.activeGoal = res.data
+      console.log(AppState.activeGoal)
+    } catch (error) {
+      console.error(error)
+    }
   }
 
-  async createGoal(goal) {
-    const res = await api.post('api/goals/', goal)
-    AppState.goals.push(res.data)
-    return res.data
+  async createGoal(body) {
+    try {
+      const res = await api.post('api/goals', body)
+      AppState.goals.push(res.data)
+      return res.data
+    } catch (error) {
+      console.error(error)
+    }
   }
 
   async editGoal(id, newTitle, newBody) {
@@ -27,9 +39,9 @@ class GoalsService {
     console.log(res)
   }
 
-  async deleteGoal(_id) {
-    await api.delete('api/goals/' + _id)
-    const goalIndex = AppState.goals.findIndex(g => g._id === _id)
+  async deleteGoal(id) {
+    await api.delete('api/goals/' + id)
+    const goalIndex = AppState.goals.findIndex(g => g._id === id)
     AppState.goals.splice(goalIndex, 1)
   }
 }

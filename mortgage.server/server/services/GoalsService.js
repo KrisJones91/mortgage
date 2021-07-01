@@ -3,23 +3,24 @@ import { BadRequest, UnAuthorized } from '../utils/Errors'
 
 class GoalsService {
   async getGoals(query = {}) {
-    return await dbContext.Goals.find(query).populate('creator')
+    const goal = await dbContext.Goal.find(query).populate('creator')
+    return goal
   }
 
   async getOne(id) {
-    const Goal = await dbContext.Goals.findById(id).populate('creator', 'name')
-    if (!Goal) {
+    const goal = await dbContext.Goal.findById(id).populate('creator', 'name')
+    if (!goal) {
       throw new BadRequest('Sorry, no goal was found with that ID')
     }
-    return Goal
+    return goal
   }
 
   async createGoal(body) {
-    return await dbContext.Goals.create(body)
+    return await dbContext.Goal.create(body)
   }
 
   async editGoal(body, title) {
-    const updated = await dbContext.Goals.findOneAndUpdate({ _id: body.id, creatorId: body.creatorId }, body, title)
+    const updated = await dbContext.Goal.findOneAndUpdate({ _id: body.id, creatorId: body.creatorId }, body, title)
     if (!updated) {
       throw new BadRequest('Invalid Id')
     }

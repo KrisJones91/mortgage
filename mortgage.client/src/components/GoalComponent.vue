@@ -1,9 +1,22 @@
 <template>
   <div class="goal-component">
-    <div class="col">
-      <div class="card">
-        <h2>{{ goalProp.title }}</h2>
-        <!-- <h5>{{ goalProp.body }}</h5> -->
+    <div class="row ">
+      <div class="col-6">
+        <div class="card card-one m-3">
+          <div class="card-header text-center">
+            <h2 class="title mb-1 mt-1">
+              {{ goalProp.title }}
+            </h2>
+            <p class="text-white">
+              {{ goalProp.updatedAt.slice(0,10) }}
+            </p>
+          </div>
+          <div class="card card-two m-3">
+            <h5 class="body mt-3 mb-3 ml-3">
+              <small>{{ goalProp.body }}</small>
+            </h5>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -12,8 +25,6 @@
 <script>
 import { computed } from '@vue/runtime-core'
 import { AppState } from '../AppState'
-// import { logger } from '../utils/Logger'
-// import { goalsService } from '../services/GoalsService'
 
 export default {
   name: 'GoalComponent',
@@ -23,8 +34,28 @@ export default {
   setup(props) {
     return {
       account: computed(() => AppState.account)
-
     }
   }
 }
 </script>
+<style scoped>
+.card-one{
+  border-radius: 10px;
+  box-shadow: 4px 8px 8px rgb(153, 152, 152);
+}
+.card-header{
+  background-color: #6c0f98;
+  border-radius: 10px 10px 0px 0px;
+  font-family: 'Poppins', sans-serif;
+}
+.card-two{
+  border: inset #6c0f98 1.5px;
+
+}
+.title{
+  color: #42dec0;
+}
+.body{
+font-family: 'Poppins', sans-serif;
+}
+</style>

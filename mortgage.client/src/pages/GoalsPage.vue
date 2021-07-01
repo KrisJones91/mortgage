@@ -6,7 +6,7 @@
       </h1>
     </div>
     <div class="row justify-content-center">
-      <div class="col-6 text-center">
+      <div class="col-4 text-center">
         <form type="submit" @submit.prevent="createGoal">
           <div class="form-group">
             <input type="text"
@@ -30,9 +30,9 @@
         </form>
       </div>
     </div>
-    <div class="row">
-      <GoalComponent v-for="goal in state.goals" :key="goal.id" :goal-prop="goal" />
-    </div>
+    <!-- <div class="card mb-5 pb-3 pt-3"> -->
+    <GoalComponent v-for="goal in state.goals" :key="goal._id" :goal-prop="goal" />
+    <!-- </div> -->
   </div>
 </template>
 
@@ -42,6 +42,8 @@ import { AppState } from '../AppState'
 import { onMounted } from '@vue/runtime-core'
 import { logger } from '../utils/Logger'
 import { goalsService } from '../services/GoalsService'
+// import { useRouter } from 'vue-router'
+import GoalComponent from '../components/GoalComponent'
 
 export default {
   name: 'GoalsPage',
@@ -63,15 +65,20 @@ export default {
       state,
       async createGoal() {
         try {
+          // await goalsService.createGoal(state.newGoal)
+          // state.newGoal = {}
+          // await goalsService.getGoals()
+          // logger.log(state.newGoal)
           await goalsService.createGoal(state.newGoal)
-          state.newGoal = {}
-          await goalsService.getGoals()
           logger.log(state.newGoal)
         } catch (error) {
           logger.log(error)
         }
       }
     }
+  },
+  components: {
+    GoalComponent
   }
 }
 </script>
@@ -82,5 +89,10 @@ export default {
   text-shadow: 2px 5px 8px gray;
   -webkit-text-stroke: #6c0f98 1.7px;
 }
-
+.goals{
+  background-color: white;
+}
+.card{
+  box-shadow: 1px 10px 10px rgb(164, 164, 164);
+}
 </style>
