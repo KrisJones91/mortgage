@@ -4,7 +4,9 @@ const Schema = mongoose.Schema
 const Goals = new Schema({
   title: { type: String, required: true },
   body: { type: String, required: true },
-  creatorId: { type: String, ref: 'Account', required: true }
+  creatorId: { type: String, ref: 'Account', required: true },
+  complete: { type: Boolean, default: false }
+
 },
 { timestamps: true, toJSON: { virtual: true } }
 )
