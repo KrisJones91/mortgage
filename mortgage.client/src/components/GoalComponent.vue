@@ -68,7 +68,7 @@ export default {
 }
 .title{
   color: #6c0f98;
-  text-shadow: 2px 3px 6px rgb(141, 128, 144);
+  text-shadow: 1px 3px 5px rgb(137, 137, 137);
 }
 .body{
 font-family: 'Poppins', sans-serif;

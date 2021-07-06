@@ -10,20 +10,20 @@
         <form type="submit" @submit.prevent="createGoal">
           <div class="form-group">
             <input type="text"
-                   class="form-control m-1 in-one"
+                   class="form-control inp m-1 in-one"
                    id="title"
                    v-model="state.newGoal.title"
                    placeholder="Title..."
                    required
             >
             <textarea type="text"
-                      class="form-control m-1 "
+                      class="form-control inp m-1 "
                       id="body"
                       v-model="state.newGoal.body"
                       placeholder="Description..."
                       required
             />
-            <button type="submit" class="btn btn-outline-dark mt-2">
+            <button type="submit" class="btn main-button mt-2">
               Submit
             </button>
           </div>
@@ -91,7 +91,7 @@ export default {
 .title{
   font-family: 'Poppins', sans-serif;
   color: #42dec0;
-  text-shadow: 2px 5px 8px gray;
+  text-shadow: 2px 4px 5px gray;
   -webkit-text-stroke: #6c0f98 1.7px;
 }
 .goals{
@@ -102,6 +102,20 @@ export default {
   overflow-y: auto;
   max-height: 480px;
   background-color: #cfcfcf;
-  border: 3px  #6c0f98;
+  border: 3px solid #6c0f98;
+}
+.inp {
+  border: 2px solid #6c0f98;
+  box-shadow: 1px 2px 5px rgb(164, 164, 164);
+}
+.goals{
+  background-color: rgb(227, 227, 199);
+}
+.main-button{
+  border: 2px ridge rgb(131, 131, 131);
+  background-color: #6c0f98;
+  box-shadow: 1px 3px 8px rgb(95, 95, 95);
+  color: rgb(0, 0, 0);
+  background: linear-gradient(150deg, rgb(255, 255, 255), rgb(190, 190, 190));
 }
 </style>
