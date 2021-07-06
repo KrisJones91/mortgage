@@ -30,8 +30,13 @@
         </form>
       </div>
     </div>
+    <div class="row">
+      <div class="col card m-5">
+        <GoalComponent v-for="goal in state.goals" :key="goal._id" :goal-prop="goal" />
+      </div>
+    </div>
     <!-- <div class="card mb-5 pb-3 pt-3"> -->
-    <GoalComponent v-for="goal in state.goals" :key="goal._id" :goal-prop="goal" />
+    <!-- <GoalComponent v-for="goal in state.goals" :key="goal._id" :goal-prop="goal" /> -->
     <!-- </div> -->
   </div>
 </template>
@@ -94,5 +99,6 @@ export default {
 }
 .card{
   box-shadow: 1px 10px 10px rgb(164, 164, 164);
+  overflow-y: auto;
 }
 </style>

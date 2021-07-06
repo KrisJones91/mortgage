@@ -1,6 +1,9 @@
 <template>
   <div class="goal-component">
-    <div class="row ">
+    <div class="card m-2 p-2">
+      <h3> {{ goalProp.title }}</h3>
+    </div>
+  <!-- <div class="row ">
       <div class="col-6">
         <div class="card card-one m-3">
           <div class="card-header text-center">
@@ -19,6 +22,7 @@
         </div>
       </div>
     </div>
+  </div> -->
   </div>
 </template>
 
