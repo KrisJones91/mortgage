@@ -59,16 +59,18 @@ export default {
   border-radius: 10px 10px 0px 0px;
   font-family: 'Poppins', sans-serif; */
   border-bottom: 2px solid #6c0f98;
-  background-color: rgb(243, 184, 242);
+  background-image: linear-gradient(to bottom, rgb(243, 184, 242), white);
+
 }
 .card-two{
   border: outset #6c0f98 2px;
   box-shadow: 4px 8px 8px rgb(153, 152, 152);
 
 }
+
 .title{
   color: #6c0f98;
-  text-shadow: 1px 3px 5px rgb(137, 137, 137);
+  text-shadow: 1px 3px 5px rgb(137, 137, 137) ;
 }
 .body{
 font-family: 'Poppins', sans-serif;
