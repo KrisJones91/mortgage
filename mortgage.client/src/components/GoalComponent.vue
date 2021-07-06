@@ -62,7 +62,7 @@ export default {
   background-color: rgb(243, 184, 242);
 }
 .card-two{
-  border: outset #6c0f98 3px;
+  border: outset #6c0f98 2px;
   box-shadow: 4px 8px 8px rgb(153, 152, 152);
 
 }
