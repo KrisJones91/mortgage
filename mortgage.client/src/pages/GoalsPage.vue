@@ -101,7 +101,7 @@ export default {
   box-shadow: 1px 10px 10px rgb(164, 164, 164);
   overflow-y: auto;
   max-height: 480px;
-  background-color: #cfcfcf;
+  background-image: url("https://as1.ftcdn.net/jpg/02/28/48/60/500_F_228486016_EgAGRIewZ9UbniSsw8y6xUPOzqd2sJIw.jpg");
   border: 3px solid #6c0f98;
 }
 .inp {
@@ -109,12 +109,12 @@ export default {
   box-shadow: 1px 2px 5px rgb(164, 164, 164);
 }
 .goals{
-  background-color: rgb(227, 227, 199);
+  background-color: rgb(219, 219, 219);
 }
 .main-button{
   border: 2px ridge rgb(131, 131, 131);
   background-color: #6c0f98;
-  box-shadow: 1px 3px 8px rgb(95, 95, 95);
+  box-shadow: 1px 2.5px 6px rgba(0, 0, 0, 0.245);
   color: rgb(0, 0, 0);
   background: linear-gradient(150deg, rgb(255, 255, 255), rgb(190, 190, 190));
 }
