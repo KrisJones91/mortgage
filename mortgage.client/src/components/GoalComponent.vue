@@ -1,7 +1,14 @@
 <template>
   <div class="goal-component">
-    <div class="card m-2 p-2">
-      <h3> {{ goalProp.title }}</h3>
+    <div class="card card-two m-2 p-1">
+      <div class="card-header text-center">
+        <h3 class="title">
+          {{ goalProp.title }}
+        </h3>
+      </div>
+      <div class="card-body">
+        <p>{{ goalProp.body }}</p>
+      </div>
     </div>
   <!-- <div class="row ">
       <div class="col-6">
@@ -48,16 +55,20 @@ export default {
   box-shadow: 4px 8px 8px rgb(153, 152, 152);
 }
 .card-header{
-  background-color: #6c0f98;
+  /* background-color: #6c0f98;
   border-radius: 10px 10px 0px 0px;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Poppins', sans-serif; */
+  border-bottom: 2px solid #6c0f98;
+  background-color: rgb(243, 184, 242);
 }
 .card-two{
-  border: inset #6c0f98 1.5px;
+  border: outset #6c0f98 3px;
+  box-shadow: 4px 8px 8px rgb(153, 152, 152);
 
 }
 .title{
-  color: #42dec0;
+  color: #6c0f98;
+  text-shadow: 2px 3px 6px rgb(141, 128, 144);
 }
 .body{
 font-family: 'Poppins', sans-serif;

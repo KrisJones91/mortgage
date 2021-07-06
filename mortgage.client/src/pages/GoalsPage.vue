@@ -6,7 +6,7 @@
       </h1>
     </div>
     <div class="row justify-content-center">
-      <div class="col-4 text-center">
+      <div class="col-10 col-md-6 text-center">
         <form type="submit" @submit.prevent="createGoal">
           <div class="form-group">
             <input type="text"
@@ -31,7 +31,7 @@
       </div>
     </div>
     <div class="row">
-      <div class="col card m-5">
+      <div class="col card m-5 p-2">
         <GoalComponent v-for="goal in state.goals" :key="goal._id" :goal-prop="goal" />
       </div>
     </div>
@@ -100,5 +100,8 @@ export default {
 .card{
   box-shadow: 1px 10px 10px rgb(164, 164, 164);
   overflow-y: auto;
+  max-height: 480px;
+  background-color: #cfcfcf;
+  border: 3px  #6c0f98;
 }
 </style>
