@@ -75,14 +75,12 @@ export default {
   font-family: 'Poppins', sans-serif; */
   border-bottom: 2px solid #6c0f98;
   background-image: linear-gradient(to bottom, #548ab1, white);
-
 }
 .card-two{
   border: outset #6c0f98 2px;
   box-shadow: 4px 8px 8px rgb(153, 152, 152);
 
 }
-
 .title{
   color: #a60647;
   text-shadow: 1px 3px 5px rgb(137, 137, 137) ;
