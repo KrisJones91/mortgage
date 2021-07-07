@@ -104,8 +104,12 @@ export default {
   box-shadow: 1px 10px 10px rgb(164, 164, 164);
   overflow-y: auto;
   max-height: 480px;
-  background-image: url("https://as1.ftcdn.net/jpg/02/28/48/60/500_F_228486016_EgAGRIewZ9UbniSsw8y6xUPOzqd2sJIw.jpg");
+  min-height: 480px;
+  background-image: url("http://st.depositphotos.com/2569633/2979/v/450/depositphotos_29795757-Seamless-pattern-with-small-flowers.jpg");
+  background-size:cover ;
   border: 3px solid #6c0f98;
+  background-position-y: 1060%;
+  background-position-x: -30%;
 }
 .inp {
   border: 2px solid #6c0f98;

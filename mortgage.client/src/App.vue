@@ -26,7 +26,7 @@ export default {
 <style lang="scss">
 @import "./assets/scss/main.scss";
 .footer{
-  background-color: rgba(214, 95, 222, 0.341);
+  background-color: #a60647;
   color: black;
 }
 </style>

@@ -130,16 +130,21 @@ a:hover {
   padding-left: 5%;
 }
 .navbar{
-  background-color: rgba(76, 76, 76, 0.341);
+  background-color: #a60647;
   color: black;
 }
 .far{
   animation: pulse 4s infinite;
 }
   @keyframes pulse {
-    0% { color: rgb(212, 183, 255); }
+    0% { color: #5d6e05; }
+    25% { color: #98a555; }
+    50% { color: #5d6e05; }
+    75% { color: #98a555; }
+    100% { color: #5d6e05; }
+    /* 0% { color: rgb(212, 183, 255); }
     50% { color: rgb(142, 66, 255); }
-    100% { color: rgb(212, 183, 255); }
+    100% { color: rgb(212, 183, 255); } */
   }
   .bg-box{
     background-image: linear-gradient(310deg, rgb(255, 255, 255), rgb(197, 197, 197));

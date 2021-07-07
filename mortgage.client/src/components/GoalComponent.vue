@@ -3,14 +3,14 @@
     <div class="card card-two m-2 p-1">
       <div class="card-header text-center">
         <p class="float-right" @click="deleteGoal()">
-          X
+          <i class="far fa-times-circle fa-2x"></i>
         </p>
         <h3 class="title">
           {{ goalProp.title }}
         </h3>
       </div>
       <div class="card-body">
-        <p>{{ goalProp.body }}</p>
+        <ul>{{ goalProp.body }}</ul>
       </div>
     </div>
   <!-- <div class="row ">
@@ -74,7 +74,7 @@ export default {
   border-radius: 10px 10px 0px 0px;
   font-family: 'Poppins', sans-serif; */
   border-bottom: 2px solid #6c0f98;
-  background-image: linear-gradient(to bottom, rgb(243, 159, 242), white);
+  background-image: linear-gradient(to bottom, #548ab1, white);
 
 }
 .card-two{
@@ -84,10 +84,16 @@ export default {
 }
 
 .title{
-  color: #6c0f98;
+  color: #a60647;
   text-shadow: 1px 3px 5px rgb(137, 137, 137) ;
 }
 .body{
 font-family: 'Poppins', sans-serif;
+}
+.far{
+  color: #a60647;
+}
+.far:hover{
+  transform: scale(1.3);
 }
 </style>
