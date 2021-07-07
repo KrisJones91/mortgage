@@ -74,7 +74,7 @@ export default {
   border-radius: 10px 10px 0px 0px;
   font-family: 'Poppins', sans-serif; */
   border-bottom: 2px solid #6c0f98;
-  background-image: linear-gradient(to bottom, rgb(243, 184, 242), white);
+  background-image: linear-gradient(to bottom, rgb(243, 159, 242), white);
 
 }
 .card-two{
