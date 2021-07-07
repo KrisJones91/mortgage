@@ -2,6 +2,9 @@
   <div class="goal-component">
     <div class="card card-two m-2 p-1">
       <div class="card-header text-center">
+        <p class="float-right" @click="deleteGoal()">
+          X
+        </p>
         <h3 class="title">
           {{ goalProp.title }}
         </h3>
@@ -36,6 +39,9 @@
 <script>
 import { computed } from '@vue/runtime-core'
 import { AppState } from '../AppState'
+import { goalsService } from '../services/GoalsService'
+import { logger } from '../utils/Logger'
+// import { useRoute } from 'vue-router'
 
 export default {
   name: 'GoalComponent',
@@ -43,8 +49,17 @@ export default {
     goalProp: { type: Object, required: true }
   },
   setup(props) {
+    // const route = useRoute()
     return {
-      account: computed(() => AppState.account)
+      account: computed(() => AppState.account),
+      async deleteGoal() {
+        try {
+          await goalsService.deleteGoal(props.goalProp._id)
+          await goalsService.getGoals()
+        } catch (error) {
+          logger.log(error)
+        }
+      }
     }
   }
 }

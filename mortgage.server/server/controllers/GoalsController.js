@@ -50,7 +50,9 @@ export class GoalsController extends BaseController {
 
   async deleteGoal(req, res, next) {
     try {
-      await goalsService.deleteGoal(req.params.id, req.userInfo.email)
+      const query = { id: req.params.id, creatorId: req.userInfo.id }
+      res.send(await goalsService.deleteGoal(query))
+      // res.send(await goalsService.deleteGoal(req.params.id, req.userInfo.email))
     } catch (error) {
       next(error)
     }

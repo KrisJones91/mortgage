@@ -1,6 +1,6 @@
 import { dbContext } from '../db/DbContext'
-import { BadRequest, UnAuthorized } from '../utils/Errors'
-
+import { BadRequest } from '../utils/Errors'
+import { logger } from '../utils/Logger'
 class GoalsService {
   async getGoals(query = {}) {
     const goal = await dbContext.Goal.find(query).populate('creator')
@@ -27,12 +27,12 @@ class GoalsService {
     return updated
   }
 
-  async deleteGoal(id) {
-    const goal = await this.getOne(id)
-    // @ts-ignore
-    if (goal.creatorId !== goal.creator.id) {
-      throw new UnAuthorized('Cannot delete another persons goal')
+  async deleteGoal(body, goal) {
+    const Goal = await dbContext.Goal.findByIdAndDelete({ _id: body.id, creatorId: body.creatorId }, { goal })
+    if (!Goal) {
+      throw new BadRequest("Cannot delete what isn't there.")
     }
+    logger.log(Goal)
     return 'Deleted Goal Successfully'
   }
 }

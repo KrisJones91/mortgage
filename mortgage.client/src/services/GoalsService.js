@@ -23,13 +23,9 @@ class GoalsService {
   }
 
   async createGoal(body) {
-    try {
-      const res = await api.post('api/goals', body)
-      AppState.goals.push(res.data)
-      return res.data
-    } catch (error) {
-      console.error(error)
-    }
+    const res = await api.post('api/goals', body)
+    AppState.goals.push(res.data)
+    return res.data.id
   }
 
   async editGoal(id, newTitle, newBody) {
@@ -41,7 +37,7 @@ class GoalsService {
 
   async deleteGoal(id) {
     await api.delete('api/goals/' + id)
-    const goalIndex = AppState.goals.findIndex(g => g._id === id)
+    const goalIndex = AppState.goals.findIndex(g => g.id === id)
     AppState.goals.splice(goalIndex, 1)
   }
 }

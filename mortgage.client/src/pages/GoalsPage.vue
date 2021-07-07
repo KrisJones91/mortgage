@@ -75,7 +75,9 @@ export default {
           // await goalsService.getGoals()
           // logger.log(state.newGoal)
           await goalsService.createGoal(state.newGoal)
+          state.newGoal = {}
           logger.log(state.newGoal)
+          await goalsService.getGoals()
         } catch (error) {
           logger.log(error)
         }
@@ -88,15 +90,16 @@ export default {
 }
 </script>
 <style scoped>
+.goals{
+  background-color: rgb(219, 219, 219);
+}
 .title{
   font-family: 'Poppins', sans-serif;
   color: #42dec0;
   text-shadow: 2px 4px 5px gray;
   -webkit-text-stroke: #6c0f98 1.7px;
 }
-.goals{
-  background-color: white;
-}
+
 .card{
   box-shadow: 1px 10px 10px rgb(164, 164, 164);
   overflow-y: auto;
@@ -108,14 +111,11 @@ export default {
   border: 2px solid #6c0f98;
   box-shadow: 1px 2px 5px rgb(164, 164, 164);
 }
-.goals{
-  background-color: rgb(219, 219, 219);
-}
 .main-button{
   border: 2px ridge rgb(131, 131, 131);
   background-color: #6c0f98;
   box-shadow: 1px 2.5px 6px rgba(0, 0, 0, 0.245);
   color: rgb(0, 0, 0);
-  background: linear-gradient(150deg, rgb(255, 255, 255), rgb(190, 190, 190));
+  background: linear-gradient(90deg, rgb(255, 255, 255), rgb(207, 207, 207));
 }
 </style>
