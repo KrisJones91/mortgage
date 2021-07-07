@@ -137,11 +137,11 @@ a:hover {
   animation: pulse 4s infinite;
 }
   @keyframes pulse {
-    0% { color: #5d6e05; }
-    25% { color: #98a555; }
-    50% { color: #5d6e05; }
-    75% { color: #98a555; }
-    100% { color: #5d6e05; }
+    0% { color: #5881ba; }
+    25% { color: #70aafa; }
+    50% { color: #5881ba; }
+    75% { color: #70aafa; }
+    100% { color: #5881ba; }
     /* 0% { color: rgb(212, 183, 255); }
     50% { color: rgb(142, 66, 255); }
     100% { color: rgb(212, 183, 255); } */

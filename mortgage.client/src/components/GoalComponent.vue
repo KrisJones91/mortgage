@@ -9,7 +9,7 @@
           {{ goalProp.title }}
         </h3>
       </div>
-      <div class="card-body">
+      <div class="card-body text-left">
         <ul>{{ goalProp.body }}</ul>
       </div>
     </div>
