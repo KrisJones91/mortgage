@@ -122,7 +122,7 @@ a:hover {
 }
 .nav-link{
   text-transform: uppercase;
-  color: purple;
+  color: #6c9de2;
 }
 .nav-item .nav-link.router-link-exact-active{
   color: rgb(255, 255, 255);
