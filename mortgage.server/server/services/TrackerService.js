@@ -1,7 +1,7 @@
 import { dbContext } from '../db/DbContext'
 import { BadRequest, UnAuthorized } from '../utils/Errors'
 class TrackerService {
-  async getTracked(query = {}) {
+  async getTracks(query = {}) {
     const track = await dbContext.Tracker.find(query).populate('creator')
     return track
   }

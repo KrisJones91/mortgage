@@ -1,7 +1,7 @@
 import mongoose from 'mongoose'
 const Schema = mongoose.Schema
 
-const Tracker = new Schema({
+const Trackers = new Schema({
   name: { type: String, required: true },
   body: { type: String, required: true },
   date: { type: Date, required: true },
@@ -13,11 +13,11 @@ const Tracker = new Schema({
 { timestamps: true, toJSON: { virtual: true } }
 )
 
-Tracker.virtual('creator', {
+Trackers.virtual('creator', {
   localField: 'creatorId',
   ref: 'Account',
   foreignField: '_id',
   justOne: true
 })
 
-export default Tracker
+export default Trackers

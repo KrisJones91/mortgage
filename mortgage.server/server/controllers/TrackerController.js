@@ -16,7 +16,7 @@ export class TrackerController extends BaseController {
 
   async getTracked(req, res, next) {
     try {
-      res.send(await trackerService.getTracked({ track: req.params.id }))
+      res.send(await trackerService.getTracks({ track: req.params.id }))
     } catch (error) {
       next(error)
     }
