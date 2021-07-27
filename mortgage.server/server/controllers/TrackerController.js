@@ -8,16 +8,15 @@ export class TrackerController extends BaseController {
     this.router
       .get('/', this.getTracked)
       .get('/:id', this.getOneTrack)
-      .post('/', this.createTrack)
       .use(Auth0Provider.getAuthorizedUserInfo)
+      .post('/', this.createTrack)
       .put('/:id', this.editTrack)
       .delete('/:id', this.deleteTrack)
   }
 
   async getTracked(req, res, next) {
     try {
-      const data = await trackerService.getTracked()
-      res.send(data)
+      res.send(await trackerService.getTracked({ track: req.params.id }))
     } catch (error) {
       next(error)
     }

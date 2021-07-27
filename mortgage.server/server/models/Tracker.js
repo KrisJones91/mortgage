@@ -1,4 +1,5 @@
-const { Schema } = require('mongoose')
+import mongoose from 'mongoose'
+const Schema = mongoose.Schema
 
 const Tracker = new Schema({
   name: { type: String, required: true },
@@ -6,7 +7,7 @@ const Tracker = new Schema({
   date: { type: Date, required: true },
   balance: { type: Number, required: false },
   payment: { type: Number, required: true },
-  creatorId: { type: String, required: true }
+  creatorId: { type: String, ref: 'Account', required: true }
 
 },
 { timestamps: true, toJSON: { virtual: true } }
