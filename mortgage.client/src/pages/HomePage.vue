@@ -17,7 +17,8 @@ export default {
       user: computed(() => AppState.user),
       account: computed(() => AppState.account),
       goals: computed(() => AppState.goals),
-      tracks: computed(() => AppState.tracks)
+      tracks: computed(() => AppState.tracks),
+      newTrack: {}
     })
     onMounted(async() => {
       try {
