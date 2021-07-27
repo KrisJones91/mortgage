@@ -6,7 +6,7 @@ export class TrackerController extends BaseController {
   constructor() {
     super('api/tracker')
     this.router
-      .get('/', this.getAllTracked)
+      .get('/', this.getTracked)
       .get('/:id', this.getOneTrack)
       .post('/', this.createTrack)
       .use(Auth0Provider.getAuthorizedUserInfo)
@@ -16,7 +16,7 @@ export class TrackerController extends BaseController {
 
   async getTracked(req, res, next) {
     try {
-      const data = await trackerService.getAll()
+      const data = await trackerService.getTracked()
       res.send(data)
     } catch (error) {
       next(error)

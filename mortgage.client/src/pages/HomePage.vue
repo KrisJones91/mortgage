@@ -8,7 +8,7 @@
 import { computed, reactive, onMounted } from '@vue/runtime-core'
 import { AppState } from '../AppState'
 import { logger } from '../utils/Logger'
-import { goalsService } from '../services/GoalsService'
+import { trackService } from '../services/TrackService'
 
 export default {
   name: 'Home',
@@ -16,11 +16,12 @@ export default {
     const state = reactive({
       user: computed(() => AppState.user),
       account: computed(() => AppState.account),
-      goals: computed(() => AppState.goals)
+      goals: computed(() => AppState.goals),
+      tracks: computed(() => AppState.tracks)
     })
     onMounted(async() => {
       try {
-        await goalsService.getGoals()
+        await trackService.getTracked()
       } catch (error) {
         logger.log(error)
       }
