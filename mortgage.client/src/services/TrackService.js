@@ -5,7 +5,7 @@ import { api } from './AxiosService'
 class TrackService {
   async getTracked() {
     try {
-      const res = await api.get('api/tracker/')
+      const res = await api.get('api/tracker')
       AppState.tracks = res.data
     } catch (error) {
       logger.error(error)

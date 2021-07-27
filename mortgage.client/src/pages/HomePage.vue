@@ -1,6 +1,6 @@
 <template>
   <div class="home container-fluid">
-    <Tracker-Component v-for="track in state.tracks" :key="track.id" :tracker-prop="track" />
+    <!-- <Tracker-Component v-for="track in state.tracks" :key="track.id" :tracker-prop="track" /> -->
   </div>
 </template>
 
